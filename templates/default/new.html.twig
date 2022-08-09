@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(formulario) }}
+       {{ form_widget(formulario) }}
+        {# <button class="btn">{{ button_label|default('Save') }}</button> #}
+      {# <h3> Exps </h3>
+        <ul class="exp">
+            {% for exp in formulario.exps %}
+                <li>{{ form_row(exp.title) }}</li>
+            {% endfor %}
+        </ul>#}
+    {{ form_end(formulario) }}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{{ form_start(form) }}
+{#<h3>Editar User y también sus Exps</h3>#}
+<div class="table-responsive">
+    <table id='table' class="table table-condensed" border="0" cellspacing="0" cellpadding="0">
+        <tbody class="tbody">
+        {% for exp in form.exps %}
+            <tr>
+                <td>
+                    {{form_label(exp.title)}}
+                    {{form_widget(exp.title)}}
+                </td>
+                <td>
+                    {{form_label(exp.dateFrom)}}
+                    {{form_widget(exp.dateFrom)}}
+                </td>
+                <td class="text-center">
+                    <button class='btn btn-danger delete' type='button' title='Eliminar'>Eliminar</button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfooter>
+            <td colspan="100%">
+                <div class="add"></div>
+            </td>
+        </tfooter>
+    </table>
+
+    {# <div class="detalles" data-prototype="{{ form_widget(form.dispositivoHorariosDetalles.vars.prototype)|e('html_attr') }}"></div>  #}
+
+</div>
+{{ form_end(form) }}

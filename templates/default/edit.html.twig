@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('default/form.html.twig', {'button_label': 'Update'}) }}
+
+    {{ form_start(form) }}
+    {#{{ form_widget(form) }}#}
+    {# <button class="btn">{{ button_label|default('Save') }}</button> #}
+        <h3> Exps </h3>
+        <ul class="exp">
+            {% for exp in form.exps %}
+                <li>{{ form_row(exp.title) }}</li>
+            {% endfor %}
+        </ul>
+    {{ form_end(form) }}
+
+{% endblock %}

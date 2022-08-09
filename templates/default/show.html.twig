@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Usuario</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ usuario.id }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ usuario.nombre }}</td>
+        </tr>
+        <tr>
+            {%  for exp in usuario.exps %}
+                <th>Exp</th>
+                <td>{{ exp.id }}</td>
+            {%  endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('indice') }}">back to list</a>
+    <a href="{{ path('editar', {'id': usuario.id}) }}">edit</a>
+
+{% endblock %}
